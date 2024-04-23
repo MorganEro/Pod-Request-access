@@ -12,13 +12,14 @@
   --clr-black: #121725;
   --clr-white: #ffffff;
 }
-
+/* RESET */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* GLOBAL */
 img {
   display: block;
   max-width: 100%;
@@ -275,10 +276,7 @@ button:active {
 }
 
 @media (min-width: 1024px) {
-  /* Desktop styles go here */
-
   body {
-    /* padding-left: 10.3rem; */
     padding-left: 165px;
     padding-bottom: 49px;
     max-width: 1440px;
