@@ -1,0 +1,348 @@
+:root {
+  --font-family: 'Chivo', sans-serif;
+
+  --font-weight-extraLight: 100;
+  --font-weight-light: 200;
+
+  --clr-green: #54e6af;
+  --clr-active-green: rgb(179, 255, 226);
+  --clr-pink: #c2cbe5bb;
+  --clr-grey: #5a668a;
+  --clr-darkGrey: #2c344b;
+  --clr-black: #121725;
+  --clr-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  color: var(--clr-pink);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-light);
+  background-color: var(--clr-black);
+  line-height: 1.56;
+  font-size: 0.9375rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .wrapper::before {
+    content: '';
+    background-image: url(assets/mobile/image-host.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.logo {
+  margin-top: 58px;
+  margin-bottom: 2.65rem;
+  width: 135px;
+}
+.host-wrapper,
+.dots {
+  display: none;
+}
+
+h1,
+span,
+p,
+input::placeholder {
+  filter: brightness(80%);
+}
+
+h1 {
+  font-size: 1.625rem;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-extraLight);
+  color: var(--clr-green);
+  line-height: 2.37rem;
+}
+span {
+  font-size: 1.625rem;
+  color: var(--clr-white);
+}
+
+p {
+  margin-top: 0.15rem;
+  margin-bottom: 2.2rem;
+}
+
+.distributors {
+  padding-inline: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 3.3rem;
+}
+.distributors img {
+  max-height: 30px;
+  filter: brightness(50%);
+}
+
+form {
+  position: relative;
+  margin-bottom: 93px;
+  width: 100%;
+}
+input {
+  display: block;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: var(--clr-white);
+  padding: 13px 31px;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--clr-darkGrey);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+input::placeholder {
+  color: var(--clr-pink);
+  padding: 18px 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0 0.25);
+}
+input:focus,
+input:active {
+  outline: none;
+}
+button {
+  display: block;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: var(--clr-black);
+  background-color: var(--clr-green);
+  padding: 13px 31px;
+  border: none;
+  border-radius: 100px;
+  width: 100%;
+  cursor: pointer;
+}
+button:hover,
+button:focus,
+button:active {
+  background-color: var(--clr-active-green);
+  outline: none;
+}
+
+.form-error {
+  display: none;
+  color: red;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-weight: var(--font-weight-light);
+  position: absolute;
+  transform: translate(35px, 10px);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  body {
+    padding-left: 2.5rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 245px);
+    padding-inline: 0;
+    position: relative;
+    height: 1024px;
+  }
+  .logo {
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: self-start;
+  }
+
+  h1,
+  span {
+    font-size: 3rem;
+    line-height: 1.16;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    width: 72%;
+  }
+  .host-wrapper {
+    display: block;
+    grid-row: span 3;
+    grid-column: span 2;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    position: relative;
+    z-index: -1;
+  }
+  .host-wrapper::before {
+    content: '';
+    background-color: rgba(33, 87, 66, 0.245);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .content {
+    width: 635px;
+    height: 517px;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    align-items: start;
+    grid-row: 2 / 4;
+    background-color: var(--clr-black);
+    padding-top: 4rem;
+  }
+  form,
+  input {
+    width: 72%;
+    margin-bottom: 0;
+  }
+
+  input:focus,
+  input:active {
+    border: 8px solid var(--clr-darkGrey);
+    outline: none;
+  }
+
+  input {
+    font-size: 0.875rem;
+    border: 8px solid var(--clr-darkGrey);
+    padding: 13px 18px;
+  }
+  .form-error {
+    transform: translate(32px, -52px);
+  }
+
+  button {
+    display: inline-block;
+    width: auto;
+    padding-block: 15px;
+    font-size: 0.875rem;
+    border: 6px solid var(--clr-darkGrey);
+    transform: translate(253px, -59px);
+  }
+  .distributors {
+    gap: 2.2rem;
+    order: 1;
+    background-color: var(--clr-black);
+    margin-top: 0px;
+    position: relative;
+  }
+
+  .dots {
+    position: absolute;
+    display: block;
+    bottom: -1px;
+    left: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles go here */
+
+  body {
+    /* padding-left: 10.3rem; */
+    padding-left: 165px;
+    padding-bottom: 49px;
+    max-width: 1440px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(12, 122.5px);
+    padding-inline: 0;
+    position: relative;
+    width: 100%;
+    height: 900px;
+  }
+  .logo {
+    grid-area: 1 / 1 / 2 / 4;
+    margin-top: 108px;
+  }
+
+  h1,
+  span {
+    font-size: 3.25rem;
+    line-height: 1.19;
+    margin-block: 0.5em;
+  }
+
+  p {
+    width: 63%;
+    line-height: 1.55;
+  }
+  .host-wrapper {
+    grid-column: 4 / span 8;
+    margin-top: 132px;
+  }
+  .host-wrapper::before {
+    content: '';
+    background-color: rgba(33, 87, 66, 0.245);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .content {
+    width: 723px;
+    margin-top: 52px;
+  }
+  form,
+  input {
+    width: 72%;
+    margin-bottom: 0;
+  }
+
+  .distributors {
+    margin-top: 10px;
+  }
+  .form-error {
+    transform: translate(32px, -52px);
+  }
+
+  .dots {
+    position: absolute;
+    display: block;
+    bottom: 74px;
+    left: 1045px;
+  }
+}
